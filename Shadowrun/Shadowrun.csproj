@@ -72,8 +72,9 @@
     <Compile Include="Data\Character\Attribute.cs" />
     <Compile Include="Data\Character\Character.cs" />
     <Compile Include="Data\Character\GeneralInformation.cs" />
+    <Compile Include="Data\Character\Race.cs" />
     <Compile Include="Data\Character\StatBlock.cs" />
-    <Compile Include="Data\Definitions\DataRepo.cs" />
+    <Compile Include="Data\DataRepo.cs" />
     <Compile Include="Data\Enums.cs" />
     <Compile Include="Windows\CharacterCreation\CharacterCreationWindow.xaml.cs">
       <DependentUpon>CharacterCreationWindow.xaml</DependentUpon>

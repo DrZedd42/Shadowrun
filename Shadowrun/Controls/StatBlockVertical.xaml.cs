@@ -3,8 +3,8 @@
 namespace Shadowrun.Controls
 {
 	[PropertyChanged.AddINotifyPropertyChangedInterface]
-    public partial class StatBlockVertical
-    {
+	public partial class StatBlockVertical
+	{
 		public StatBlock CurrentStatBlock { get; set; }
 		public string Test { get; set; }
 
@@ -16,7 +16,14 @@ namespace Shadowrun.Controls
 
 		public void SetStatBlockData(StatBlock b)
 		{
-			CurrentStatBlock = b;
+			if (CurrentStatBlock == null)
+			{
+				CurrentStatBlock = b;
+			}
+			else
+			{
+				CurrentStatBlock.UpdateBlock(b);
+			}
 		}
-    }
+	}
 }

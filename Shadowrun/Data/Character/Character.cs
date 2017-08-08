@@ -14,7 +14,7 @@
 		public Character(RaceEnum race)
 		{
 			GeneralInformation = new GeneralInformation();
-			Attributes = Definitions.DataRepo.GetRaceStatBlock(race);
+			Attributes = Race.GetRace(race).Attributes;
 		}
 	}
 }

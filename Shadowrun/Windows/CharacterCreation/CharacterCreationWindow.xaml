@@ -17,7 +17,7 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="110" />
+			<ColumnDefinition Width="175" />
 		</Grid.ColumnDefinitions>
 
 		<Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Content="New Character" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="20" />

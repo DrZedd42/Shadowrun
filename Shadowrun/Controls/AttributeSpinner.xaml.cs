@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 
 using PropertyChanged;
-using System;
 
 namespace Shadowrun.Controls
 {
@@ -13,7 +12,6 @@ namespace Shadowrun.Controls
 		public event EmptyNotifyEvent OnIncrease;
 		public event EmptyNotifyEvent OnDecrease;
 
-		// Dependency properties
 		public static readonly DependencyProperty AttributeNameProperty = DependencyProperty.Register("AttributeName", typeof(string), typeof(AttributeSpinner), new PropertyMetadata("attrib_value_missing"));
 		public string AttributeName { get { return (string)GetValue(AttributeNameProperty); } set { SetValue(AttributeNameProperty, value); } }
 
@@ -23,17 +21,12 @@ namespace Shadowrun.Controls
 		public static readonly DependencyProperty MaxValueProperty = DependencyProperty.Register("MaxValue", typeof(int), typeof(AttributeSpinner), new PropertyMetadata(100));
 		public int MaxValue { get { return (int)GetValue(MaxValueProperty); } set { SetValue(MaxValueProperty, value); } }
 
-		public static readonly DependencyProperty AllowKeyInputProperty = DependencyProperty.Register("AllowKeyInput", typeof(bool), typeof(AttributeSpinner), new PropertyMetadata(false));
-		public bool AllowKeyInput { get { return (bool)GetValue(AllowKeyInputProperty); } set { SetValue(AllowKeyInputProperty, value); } }
-
 		public static readonly DependencyProperty EnableIncreaseProperty = DependencyProperty.Register("EnableIncrease", typeof(bool), typeof(AttributeSpinner), new PropertyMetadata(true));
 		public bool EnableIncrease { get { return (bool)GetValue(EnableIncreaseProperty); } set { SetValue(EnableIncreaseProperty, value); } }
 
 		public static readonly DependencyProperty EnableDecreaseProperty = DependencyProperty.Register("EnableDecrease", typeof(bool), typeof(AttributeSpinner), new PropertyMetadata(true));
 		public bool EnableDecrease { get { return (bool)GetValue(EnableDecreaseProperty); } set { SetValue(EnableDecreaseProperty, value); } }
 
-		// Value properties
-		//public int Value { get; set; }
 		public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(int), typeof(AttributeSpinner), new PropertyMetadata(0));
 		public int Value { get { return (int)GetValue(ValueProperty); } set { SetValue(ValueProperty, value); } }
 
@@ -41,6 +34,14 @@ namespace Shadowrun.Controls
 		{
 			InitializeComponent();
 			Value = 1;
+
+			UpdateButtonState();
+		}
+
+		public void UpdateButtonState()
+		{
+			DecreaseButton.IsEnabled = !(Value <= MinValue);
+			IncreaseButton.IsEnabled = !(Value >= MaxValue);
 		}
 
 		private void DecreaseButton_Click(object sender, RoutedEventArgs e)
