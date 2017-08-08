@@ -11,7 +11,7 @@
 			Attributes = new StatBlock();
 		}
 
-		public Character(Definitions.DataRepo.RaceEnum race)
+		public Character(RaceEnum race)
 		{
 			GeneralInformation = new GeneralInformation();
 			Attributes = Definitions.DataRepo.GetRaceStatBlock(race);

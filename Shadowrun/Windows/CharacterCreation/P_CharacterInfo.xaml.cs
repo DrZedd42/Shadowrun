@@ -21,12 +21,20 @@ namespace Shadowrun.Windows.CharacterCreation
 			CharacterName = "Testy Mctest";
 		}
 
-		private void RaceComboBox_DropDownClosed(object sender, System.EventArgs e)
+		private void AttributeSpinner_OnIncrease() => WindowNotifyUpdate();
+
+		private void RaceComboBox_DropDownClosed(object sender, EventArgs e)
 		{
-			// Update statblock in the windows
-			Enum.TryParse(RaceComboBox.SelectedValue.ToString(), out Data.Definitions.DataRepo.RaceEnum newRace);
-			var w = (CharacterCreationWindow)Application.Current.MainWindow;
-			w.RightStatBlock.SetStatBlockData(Data.Definitions.DataRepo.GetRaceStatBlock(newRace));
+			Enum.TryParse(RaceComboBox.SelectedValue.ToString(), out Data.RaceEnum newRace);
+			Attributes = Data.Definitions.DataRepo.GetRaceStatBlock(newRace);
+
+			WindowNotifyUpdate();
+		}
+
+
+		void WindowNotifyUpdate()
+		{
+			((CharacterCreationWindow)Application.Current.MainWindow).UpdateCharacterData();
 		}
 	}
 }

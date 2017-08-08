@@ -10,16 +10,20 @@ namespace Shadowrun.Windows.CharacterCreation
 		{
 			InitializeComponent();
 
-			CurrentCharacter = new Character(Data.Definitions.DataRepo.RaceEnum.Human);
+			CurrentCharacter = new Character(Data.RaceEnum.Human);
 
 			RightStatBlock.SetStatBlockData(CurrentCharacter.Attributes);
 		}
 
-		void UpdateCharacterData()
+		public void UpdateCharacterData()
 		{
+			// Modify CurrentCharacter
 			var charInfo = (P_CharacterInfo)CharInfoFrame.Content;
 			CurrentCharacter.GeneralInformation.Name = charInfo.CharacterName;
 			CurrentCharacter.Attributes = charInfo.Attributes;
+
+			// Push UI Changes
+			RightStatBlock.SetStatBlockData(CurrentCharacter.Attributes);
 		}
 
 		private void Button_Click(object sender, System.Windows.RoutedEventArgs e)

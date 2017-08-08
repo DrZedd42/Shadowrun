@@ -1,5 +1,6 @@
 ﻿namespace Shadowrun.Data.Character
 {
+	[PropertyChanged.AddINotifyPropertyChangedInterface]
 	public class StatBlock
 	{
 		public Attribute Body { get; set; }

@@ -49,14 +49,5 @@ namespace Shadowrun.Data.Definitions
 
 			return b;
 		}
-
-		public enum RaceEnum
-		{
-			Human,
-			Elf,
-			Dwarf,
-			Ork,
-			Troll
-		}
 	}
 }

@@ -40,17 +40,47 @@
 			<StackPanel Grid.Row="2" Grid.Column="2">
 				<Label Content="Physical" />
 				<Separator />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Body.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Body" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Agility.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}"  AttributeName="Agility" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Reaction.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Reaction" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Strength.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Strength" />
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Body.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Body.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Body" />
+
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Agility.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Agility.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Agility" />
+				
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Reaction.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Reaction.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Reaction" />
+				
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Strength.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Strength.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Strength" />
 
 				<Label Content="Mental" Margin="0 5 0 0" />
 				<Separator />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Charisma.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Charisma" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Intuition.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Intuition" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Logic.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Logic" />
-				<ctrl:AttributeSpinner Value="{Binding Attributes.Willpower.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" AttributeName="Willpower" />
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Charisma.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Charisma.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Charisma" />
+				
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Intuition.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Intuition.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Intuition" />
+				
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease"
+									   Value="{Binding Attributes.Logic.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Logic.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Logic" />
+
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+									   Value="{Binding Attributes.Willpower.BaseValue,ElementName=CharacterInfoPage,Mode=TwoWay}" 
+									   MaxValue="{Binding Attributes.Willpower.BaseLimit,ElementName=CharacterInfoPage,Mode=TwoWay}" MinValue="1"
+									   AttributeName="Willpower" />
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
