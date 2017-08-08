@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Shadowrun.Controls.AttributeSpinner"
+			 x:Name="AttribSpinnerCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Shadowrun.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="28" d:DesignWidth="250">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="50" />
+			<ColumnDefinition Width="28" />
+			<ColumnDefinition Width="28" />
+		</Grid.ColumnDefinitions>
+
+		<Label Grid.Column="0" Content="{Binding AttributeName,ElementName=AttribSpinnerCtrl}" />
+		<TextBox Grid.Column="1" x:Name="TxtValue" Text="{Binding Value, ElementName=AttribSpinnerCtrl}" VerticalContentAlignment="Center" Margin="3" 
+				 IsReadOnly="True"
+				 />
+		<Button Grid.Column="2" x:Name="DecreaseButton" IsEnabled="{Binding EnableDecrease, ElementName=AttribSpinnerCtrl}" Content="-" Margin="3 3 0 3" Click="DecreaseButton_Click" />
+		<Button Grid.Column="3" x:Name="IncreaseButton" IsEnabled="{Binding EnableIncrease, ElementName=AttribSpinnerCtrl}" Content="+" Margin="0 3 3 3" Click="IncreaseButton_Click" />
+	</Grid>
+</UserControl>
