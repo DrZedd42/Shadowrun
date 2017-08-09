@@ -32,10 +32,21 @@ namespace Shadowrun.Windows.CharacterCreation
 			CharacterName = "Testy Mctest";
 		}
 
-		private void AttributeSpinner_OnIncrease() => WindowNotifyUpdate();
 		private void RaceComboBox_SelectionChanged(object s, SelectionChangedEventArgs e) => RaceChanged();
 		private void RaceComboBox_DropDownClosed(object sender, EventArgs e) => RaceChanged();
 		private void RaceComboBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e) => RaceChanged();
+
+		private void AttributeSpinner_OnIncrease()
+		{
+			RemainingAttributePoints--;
+			WindowNotifyUpdate();
+		}
+
+		private void AttributeSpinner_OnDecrease()
+		{
+			RemainingAttributePoints++;
+			WindowNotifyUpdate();
+		}
 
 		void RaceChanged()
 		{

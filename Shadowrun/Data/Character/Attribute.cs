@@ -5,27 +5,14 @@
 	{
 		public int BaseValue { get; set; }
 		public int TempValue { get; set; }
-		public int CurrentValue { get { return BaseValue + TempValue; } }
+		public int CurrentValue => BaseValue + TempValue;
 
 		public int BaseLimit { get; set; }
 		public int TempLimit { get; set; }
-		public int CurrentLimit { get { return BaseLimit + TempLimit; } }
+		public int CurrentLimit => BaseLimit + TempLimit;
 
-		public string GetAttributeDisplay
-		{
-			get
-			{
-				return $"{CurrentValue}/{CurrentLimit}";
-			}
-		}
-
-		public string GetAttributeDisplayWithTemp
-		{
-			get
-			{
-				return $"{CurrentValue}/{CurrentLimit} ({TempValue.ToString("+#;-#;+0")}/{TempLimit.ToString("+#;-#;+0")})";
-			}
-		}
+		public string GetAttributeDisplay => $"{CurrentValue}/{CurrentLimit}";
+		public string GetAttributeDisplayWithTemp => $"{CurrentValue}/{CurrentLimit} ({TempValue.ToString("+#;-#;+0")}/{TempLimit.ToString("+#;-#;+0")})";
 
 		public Attribute() : this(1, 6) { }
 		public Attribute(int baseVal, int baseLimit)

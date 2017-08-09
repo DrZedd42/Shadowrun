@@ -11,15 +11,9 @@
 		public Attribute Intuition { get; set; }
 		public Attribute Logic { get; set; }
 		public Attribute Willpower { get; set; }
-
+		
 		[PropertyChanged.DependsOn("Reaction", "Intuition")]
-		public int Initiative
-		{
-			get
-			{
-				return Reaction.CurrentValue + Intuition.CurrentValue;
-			}
-		}
+		public int Initiative => Reaction.CurrentValue + Intuition.CurrentValue;
 
 		public StatBlock()
 		{

@@ -44,44 +44,45 @@
 			<StackPanel x:Name="AttributeSpinners"  Grid.Row="2" Grid.Column="2">
 				<Label Content="Physical" />
 				<Separator />
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Body.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Body.BaseLimit,Mode=TwoWay}" MinValue="1"
+									   EnableIncrease="False"
 									   AttributeName="Body" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Agility.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Agility.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Agility" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Reaction.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Reaction.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Reaction" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Strength.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Strength.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Strength" />
 
 				<Label Content="Mental" Margin="0 5 0 0" />
 				<Separator />
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Charisma.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Charisma.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Charisma" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Intuition.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Intuition.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Intuition" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease"
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease"
 									   Value="{Binding Attributes.Logic.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Logic.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Logic" />
 
-				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnIncrease" 
+				<ctrl:AttributeSpinner OnIncrease="AttributeSpinner_OnIncrease" OnDecrease="AttributeSpinner_OnDecrease" 
 									   Value="{Binding Attributes.Willpower.BaseValue,Mode=TwoWay}" 
 									   MaxValue="{Binding Attributes.Willpower.BaseLimit,Mode=TwoWay}" MinValue="1"
 									   AttributeName="Willpower" />
